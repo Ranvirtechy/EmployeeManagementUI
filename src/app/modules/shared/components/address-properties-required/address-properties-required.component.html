@@ -1,0 +1,50 @@
+<div class="col-lg-6">
+  <mat-form-field>
+    <mat-label>Address Line1 *</mat-label>
+    <input matInput placeholder="Address Line 1"
+           [(ngModel)]="item.addressDescription1" [errorStateMatcher]="tfrValidator" [formControl]="addressLine1Validator" autocomplete="off">
+    <mat-error *ngIf="addressLine1Validator.hasError('required')">
+      <span class="tfr-error">{{tfrConstants.tfrValidationMessages.requiredField}}</span>
+    </mat-error>
+  </mat-form-field>
+</div>
+<div class="col-lg-6">
+  <mat-form-field>
+    <mat-label>Address Line2 </mat-label>
+    <input matInput placeholder="Address Line 2"
+           [(ngModel)]="item.addressDescription2" [errorStateMatcher]="tfrValidator"   autocomplete="off">
+    
+  </mat-form-field>
+</div>
+<div class="col-xs-4">
+  <mat-form-field>
+    <mat-label>City *</mat-label>
+    <input matInput placeholder="City"
+           [(ngModel)]="item.city" [errorStateMatcher]="tfrValidator" [formControl]="cityValidator" autocomplete="off" appAlphabetOnly>
+    <mat-error *ngIf="cityValidator.hasError('required')">
+      <span class="tfr-error">{{tfrConstants.tfrValidationMessages.requiredField}}</span>
+    </mat-error>
+  </mat-form-field>
+</div>
+<div class="col-xs-4">
+  <mat-form-field>
+    <mat-label>State *</mat-label>
+    <input matInput placeholder="State"
+           [(ngModel)]="item.state" [errorStateMatcher]="tfrValidator" [formControl]="stateValidator" autocomplete="off" appAlphabetOnly>
+    <mat-error *ngIf="stateValidator.hasError('required')">
+      <span class="tfr-error">{{tfrConstants.tfrValidationMessages.requiredField}}</span>
+    </mat-error>
+  </mat-form-field>
+</div>
+
+<div class="col-xs-4">
+  <mat-form-field>
+    <mat-label>ZipCode *</mat-label>
+
+    <input matInput placeholder="ZipCode"
+           [(ngModel)]="item.zipCode" [errorStateMatcher]="tfrValidator" [formControl]="zipcodeValidator" autocomplete="off" appNumericOnly>
+    <mat-error *ngIf="zipcodeValidator.hasError('required')">
+      <span class="tfr-error">{{tfrConstants.tfrValidationMessages.requiredField}}</span>
+    </mat-error>
+  </mat-form-field>
+</div>

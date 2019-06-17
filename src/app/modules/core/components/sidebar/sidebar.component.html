@@ -1,0 +1,88 @@
+<nav class="page-sidebar" data-pages="sidebar">
+    <!-- BEGIN SIDEBAR MENU TOP TRAY CONTENT-->
+    <div class="sidebar-overlay-slide from-top" id="appMenu">
+        <div class="row">
+            <div class="col-xs-6 no-padding">
+                <a href="#" class="p-l-40">
+                    <img src="assets/img/demo/social_app.svg" alt="socail">
+                </a>
+            </div>
+            <div class="col-xs-6 no-padding">
+                <a href="#" class="p-l-10">
+                    <img src="assets/img/demo/email_app.svg" alt="socail">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 m-t-20 no-padding">
+                <a href="#" class="p-l-40">
+                    <img src="assets/img/demo/calendar_app.svg" alt="socail">
+                </a>
+            </div>
+            <div class="col-xs-6 m-t-20 no-padding">
+                <a href="#" class="p-l-10">
+                    <img src="assets/img/demo/add_more.svg" alt="socail">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- END SIDEBAR MENU TOP TRAY CONTENT-->
+    <!-- BEGIN SIDEBAR MENU HEADER-->
+    <div class="sidebar-header">
+        <img src="assets/img/joenishlogo.png" alt="logo" class="brand" data-src="assets/img/joenishlogo.png"
+            data-src-retina="assets/img/joenishlogo.png" height="22">
+
+    </div>
+    <!-- END SIDEBAR MENU HEADER-->
+    <!-- START SIDEBAR MENU -->
+    <div class="sidebar-menu">
+        <!-- BEGIN SIDEBAR MENU ITEMS-->
+        <ul class="menu-items">
+            <li *ngFor="let item of sidebar.items, let i = index" [class.m-t-30]="i == 0">
+                <a *ngIf="item.subItems && item.subItems.length > 0" href="javascript:;" [class.detailed]="item.description">
+                    <span class="title" [innerHtml]="item.displayName"></span>
+                    <span class="details" *ngIf="item.description" [innerHtml]="item.description"></span>
+                    <span class="arrow" *ngIf="item.subItems && item.subItems.length > 0"></span>
+                </a>
+                <a *ngIf="!item.subItems || (item.subItems && item.subItems.length == 0)" [routerLink]="('/' + item.route)"
+                    [class.detailed]="item.description">
+                    <span class="title" [innerHtml]="item.displayName"></span>
+                    <span class="details" *ngIf="item.description" [innerHtml]="item.description"></span>
+                </a>
+                <span class="icon-thumbnail">
+                    <span *ngIf="item.iconType == 0">
+                        <i [class]="item.icon"></i>
+                    </span>
+                    <span *ngIf="item.iconType == 1" [innerHtml]="item.icon"></span>
+                </span>
+
+                <ul *ngIf="item.subItems && item.subItems.length > 0" class="sub-menu" style="display: none;">
+                    <li *ngFor="let subItem of item.subItems">
+                        <a [routerLink]="('/' + subItem.route)">
+                            <span class="title" [innerHtml]="subItem.displayName"></span>
+                        </a>
+                        <span class="icon-thumbnail">
+                            <span *ngIf="subItem.iconType == 0">
+                                <i [class]="subItem.icon"></i>
+                            </span>
+                            <span *ngIf="subItem.iconType == 1" [innerHtml]="subItem.icon"></span>
+                        </span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <!--For using theme elements, point to theme demo folder by using chrome web server--> 
+                <a class="detailed" href="http://127.0.0.1:8887" target="_blank">
+                    <span class="title" [innerHtml]="'Demo'"></span>
+                    <span class="details" [innerHtml]="'Theme Demo'"></span>
+                </a>
+                <span class="icon-thumbnail">
+                    <span [innerHtml]="'D'"></span>
+                </span>
+            </li>
+        </ul>
+
+        <div class="clearfix"></div>
+    </div>
+    <!-- END SIDEBAR MENU -->
+</nav>

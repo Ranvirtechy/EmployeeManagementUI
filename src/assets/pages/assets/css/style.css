@@ -1,0 +1,37 @@
+/*
+
+* Override Pages default styles or create your own styles here
+
+*/
+
+@media screen and (min-width:768px){
+    .profile-icon{margin-top:10px;}
+}
+
+.pace .pace-progress {
+  background: #c0512e;
+}
+
+.pace .pace-activity {
+  visibility:hidden;
+}
+
+/* Start Dashboard CSS */
+.dashboard-index .nav-tabs{background: #fff;}
+
+.app-item{position: relative; margin-bottom: 30px; min-height:120px; background:#fff; padding:5px 5px 10px 5px; border-bottom:1px solid; box-shadow: -1px 3px 0px #eee}
+.app-item.color-1{border-color:#f36a5a;}
+.app-item.color-2{border-color:#5c9bd1;}
+.app-item.color-3{border-color:#8877a9;}
+.app-item.color-4{border-color:#2ab4c0;}
+.app-item img{float: left; width: 25%; margin: 15px; max-height:90px;}
+.app-item h3{float: left; font-size: 34px; font-weight: 300; width: 60%; margin-top: 15px; margin-bottom: 0;}
+.app-item .app-user-count{position: absolute; right: 5px; bottom: 5px;}
+.app-item .app-favorite{position: absolute; right: 10px; top: 5px; font-size: 16px; cursor:pointer;}
+.app-item .app-lock{position: absolute; right: -12px; top: -12px; background: #6d5cae; color: #fff; line-height: 28px; width: 30px; height: 30px; border-radius: 50%; text-align: center; font-size: 22px; z-index: 1;}
+.app-item .app-notification{position: absolute; right: -15px; top: -14px; background: #c40808; color: #fff; line-height: 25px; width: 25px; height: 25px; border-radius: 50%; text-align: center; font-size: 12px; font-weight:bold; z-index: 1;}
+.app-item .app-notification a{display:block; color:#fff;}
+.app-item .lock-shape{position: absolute; left:0px; top:0px; height: 100%; width: 100%; background: rgba(182, 182, 182, 0.5); text-align: center; line-height: 160px;}
+.app-item .lock-shape .btn{position:absolute; right:10px; bottom:10px;}
+
+/* End Dashboard CSS */

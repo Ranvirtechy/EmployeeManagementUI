@@ -1,0 +1,56 @@
+/* Datatables custom UI style*/
+.dataTables_length select.form-control.input-sm {
+    height: 32px;
+    padding: 0px 4px 0px 6px;
+    margin: 0px 2px;
+} 
+
+td.dt-centered-column {
+  text-align: center;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
+  top: 22px;
+  background-color: #1cca1c;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 2px #000;
+} 
+
+table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
+  content: '-';
+  background-color: #ff565a;
+}
+
+.dataTables_length > label > select {
+  border-radius: 4px;
+}
+
+table.dataTable>tbody>tr.child span.dtr-title { 
+  min-width: 160px; 
+}
+
+.dataTables_filter {
+  margin-right: 15px;
+}
+
+.datatable-col-percent-10 {
+  width: 20% !important;
+}
+
+.datatable-col-percent-20 {
+  width: 40% !important;
+}
+
+.datatable-col-percent-30 {
+  width: 60% !important;
+}
+
+.datatable-col-percent-40 {
+  width: 80% !important;
+}
+
+.datatable-col-percent-50 {
+  width: 100% !important;
+}
+ 
+

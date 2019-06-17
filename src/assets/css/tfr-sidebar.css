@@ -1,0 +1,35 @@
+
+/* Start Sidebar */
+.icon-thumbnail {
+    color: #ff565c;  
+    /* width: 36px; 
+    margin-right: 3px; */
+  } 
+  .icon-thumbnail:hover, .icon-thumbnail:active,  .icon-thumbnail:focus {
+    color: #ff565c;
+  }   
+  .page-sidebar a, .page-sidebar button {
+    color: #ff565c;
+  }
+  .page-sidebar .sidebar-menu { 
+    background-color: #0d0d0d;
+  }
+  .page-sidebar .sidebar-menu .menu-items > li > a > .details { 
+    opacity: 0.6; 
+  }
+  .page-sidebar {
+    width: 291px;
+    left: -234px;
+    background-color: #0e0e0e;
+  }
+  .page-sidebar .sidebar-header { 
+    background-color: #0d0d0d;
+  }  
+  .page-sidebar .sidebar-menu .menu-items > li > a { 
+    font-size: 13px; 
+  }
+  .page-sidebar .sidebar-menu .menu-items > li ul.sub-menu { 
+    margin: 0 0 6px 0; 
+    padding: 5px 0 0px 0;
+  }
+  /* End Sidebar */

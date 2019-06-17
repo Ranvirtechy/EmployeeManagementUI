@@ -1,0 +1,184 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "TheFoodRunners_OfficeUI": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/TheFoodRunners_OfficeUI",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "scripts": [
+              "src/assets/js/jquery-3.3.1.min.js",
+              "src/assets/plugins/pace/pace.min.js",
+              "src/assets/plugins/modernizr.custom.js",
+              "src/assets/plugins/jquery-ui/jquery-ui.min.js",
+              "src/assets/plugins/popper/umd/popper.min.js",
+              "src/assets/plugins/bootstrapv3/js/bootstrap.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/plugins/jquery/jquery-easy.js",
+              "src/assets/plugins/jquery-unveil/jquery.unveil.min.js",
+              "src/assets/plugins/jquery-bez/jquery.bez.min.js",
+              "src/assets/plugins/jquery-ios-list/jquery.ioslist.min.js",
+              "src/assets/plugins/jquery-actual/jquery.actual.min.js",
+              "src/assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js",
+              "src/assets/plugins/select2/js/select2.full.min.js",
+              "src/assets/plugins/jquery-validation/js/jquery.validate.min.js",
+              "src/assets/tfr-datatables/js/jquery.dataTables.js",
+              "src/assets/tfr-datatables/js/dataTables.responsive.min.js",
+              "node_modules/sweetalert2/dist/sweetalert2.all.min.js",
+              "node_modules/flatpickr/dist/flatpickr.min.js",
+              "src/assets/js/tfr.js"
+            ],
+            "styles": [
+              "src/assets/plugins/pace/pace-theme-flash.css",
+              "src/assets/plugins/bootstrap/css/bootstrap.min.css",
+              "src/assets/plugins/bootstrapv3/css/bootstrap.min.css",
+              "src/assets/plugins/font-awesome/css/font-awesome.css",
+              "src/assets/plugins/owl-carousel/assets/owl.carousel.css",
+              "src/assets/plugins/jquery-scrollbar/jquery.scrollbar.css",
+              "src/assets/plugins/select2/css/select2.min.css",
+              "src/assets/plugins/switchery/css/switchery.min.css",
+              "src/assets/tfr-datatables/css/jquery.dataTables.min.css",
+              "src/assets/tfr-datatables/css/responsive.dataTables.min.css",
+              "src/assets/plugins/bootstrap-datepicker/css/datepicker3.css",
+              "node_modules/sweetalert2/dist/sweetalert2.min.css",
+              "src/assets/pages/css/pages-icons.css",
+              "src/assets/pages/css/pages.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/flatpickr/dist/flatpickr.min.css",
+              "src/assets/tfr-datatables/css/tfr-datatables-template.css",
+              "src/assets/tfr-datatables/css/tfr-datatables.css",
+              "src/assets/css/tfr-sidebar.css",
+              "src/assets/css/tfr-main-style.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "src/assets/css/dashboard-css/css/dashboard-css.min.css"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "TheFoodRunners_OfficeUI:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "TheFoodRunners_OfficeUI:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "TheFoodRunners_OfficeUI:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "TheFoodRunners_OfficeUI-e2e": {
+      "root": "e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "TheFoodRunners_OfficeUI:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "TheFoodRunners_OfficeUI:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "TheFoodRunners_OfficeUI",
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "spec": false
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+<p>
+  registration-edit works!
+</p>
+
+
+
+<div class="col-lg-3 col-md-3 no-left-padding">
+  <mat-form-field>
+    <mat-label>Name *</mat-label>
+    <input matInput placeholder="enter Name" [(ngModel)]="Registration.name" autocomplete="off">
+  </mat-form-field>
+</div>
+
+<div class="col-lg-3 col-md-3 no-left-padding">
+  <mat-form-field>
+    <mat-label>Password *</mat-label>
+    <input type="password" matInput placeholder="enter Password" [(ngModel)]="Registration.password" autocomplete="off">
+  </mat-form-field>
+</div>
+
+<div class="col-lg-3 col-md-3 no-left-padding">
+  <app-date-control [floatLabel]="options.value.floatLabel" [requiredClass]="false" [lblDate]="lblDateJoining"
+                    [datePlaceHolder]="datePlaceHolder" [id]="idDOJ" [_Date]="Registration.dateOfJoining" (valueChange)="DojChanged($event)"></app-date-control>
+</div>
+
+<div class="col-lg-3 col-md-3 no-left-padding">
+  <mat-form-field>
+    <mat-label>Choose Role </mat-label>
+    <mat-select [(ngModel)]="Registration.roleid">
+      <mat-option placeholder="Select  Role" ngDefaultControl *ngFor="let dDtata of dataSource" [value]="dDtata.id" autocomplete="off">
+        {{dDtata.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+
+
+
+
+<div class="col-lg-3 col-md-3 no-left-padding">
+  <mat-form-field>
+    <mat-label>Designation *</mat-label>
+    <input matInput placeholder="enter Designation" [(ngModel)]="Registration.designation" autocomplete="off">
+  </mat-form-field>
+</div>
+
+<div class="col-lg-3 col-md-3 no-left-padding">
+  <mat-form-field>
+    <mat-label>Phone *</mat-label>
+    <input matInput placeholder="enter contact number" [(ngModel)]="Registration.phone" autocomplete="off">
+  </mat-form-field>
+</div>
+
+<div class="col-lg-3 col-md-3 no-left-padding">
+
+
+  <app-date-control [floatLabel]="options.value.floatLabel" [requiredClass]="false" [lblDate]="lblDate"
+                    [datePlaceHolder]="datePlaceHolder" [id]="idDOB" [_Date]="Registration.dateOfBirth" (valueChange)="DobChanged($event)"></app-date-control>
+
+</div>
+
+<div class="col-lg-3 col-md-3 no-left-padding">
+
+
+  <app-address-properties-required [item]="Registration" [addressLine1Validator]="addressLine1Validator"
+                                   [cityValidator]="cityValidator" [stateValidator]="stateValidator" [zipcodeValidator]="zipcodeValidator">
+
+
+  </app-address-properties-required>
+
+</div>
+
+
+  <div class="tfr-form col-xs-12 no-left-padding">
+
+    <div class="row tfr-submit-botton-group">
+      <div class="">
+        <button [routerLink]="('/registration/RegistrationList/list')" type="button" class="btn tfr-back-button">
+          <i class="fa fa-arrow-left"></i> Back
+        </button>
+      </div>
+
+      <div class="">
+        <button data-toggle="tooltip" type="button" class="btn tfr-submit-button" (click)="saveChanges()">
+          <i class="fa fa-save"></i> Save Changes
+        </button>
+      </div>
+    </div>
+  </div>

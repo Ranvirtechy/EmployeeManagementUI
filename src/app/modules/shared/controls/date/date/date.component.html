@@ -1,0 +1,14 @@
+<mat-form-field [floatLabel]="floatLabel" *ngIf="requiredClass">
+  <mat-label>{{lblDate}} <span *ngIf="requiredClass" class="color-red">*</span></mat-label>
+  <input matInput type="text" [id]="id" [placeholder]="datePlaceHolder" data-input
+         [(ngModel)]="_Date" [errorStateMatcher]="tfrValidator" [formControl]="dateValidator" (blur)="valueChanged()" autocomplete="off">
+  <mat-error *ngIf="dateValidator.hasError('required')">
+    <span class="tfr-error">{{tfrConstants.tfrValidationMessages.requiredField}}</span>
+  </mat-error>
+</mat-form-field>
+
+<mat-form-field [floatLabel]="floatLabel" *ngIf="!requiredClass">
+  <mat-label>{{lblDate}} </mat-label>
+  <input matInput type="text" [id]="id" [placeholder]="datePlaceHolder" data-input
+         [(ngModel)]="_Date"  (blur)="valueChanged()" autocomplete="off">
+</mat-form-field>

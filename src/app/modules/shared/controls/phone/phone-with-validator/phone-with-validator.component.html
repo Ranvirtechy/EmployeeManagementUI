@@ -1,0 +1,12 @@
+<mat-form-field [floatLabel]="options.value.floatLabel">
+  <mat-label>{{lblPhone}}</mat-label>
+  <input matInput appNumericOnly [formControl]="phonevalidator" [placeholder]="placeHolderPhone"
+         [(ngModel)]="PhoneNumber" (blur)="valueChanged()" autocomplete="off">
+  <mat-hint>Max length is 20</mat-hint>
+  <mat-error *ngIf="isRequired && phonevalidator.hasError('required')">
+    <span class="tfr-error">{{tfrConstants.tfrValidationMessages.requiredField}}</span>
+  </mat-error>
+  <mat-error *ngIf="phonevalidator.hasError('maxlength')">
+    <span class="tfr-error">{{tfrConstants.tfrValidationMessages.maxLengthExceeded}}</span>
+  </mat-error>
+</mat-form-field>

@@ -1,0 +1,34 @@
+<p>
+  employeerole-edit works!
+</p>
+
+<h4 class="tfr-page-title"><i class="fa fa-pencil-square-o" (click)="navigateToCreateNew()"></i> Edit Role List</h4>
+<h4 class="tfr-page-title"><i class="fa fa-plus"></i> Create New Role</h4>
+
+
+
+<div class="tfr-form col-xs-12 no-left-padding">
+
+
+  <div class="col-lg-3 col-md-4 no-left-padding">
+    <mat-form-field>
+      <mat-label>Name *</mat-label>
+      <input class="textbox" matInput type="text" placeholder="Enter Name" [(ngModel)]="Role.name" autocomplete="off">
+
+    </mat-form-field>
+  </div>
+
+  <div class="row tfr-submit-botton-group">
+    <div class="">
+      <button [routerLink]="('/employeerole/EmployeeroleList/list')" type="button" class="btn tfr-back-button">
+        <i class="fa fa-arrow-left"></i> Back
+      </button>
+    </div>
+
+    <div class="">
+      <button data-toggle="tooltip" type="button" class="btn tfr-submit-button" (click)="saveChanges()">
+        <i class="fa fa-save"></i> Save Changes
+      </button>
+    </div>
+  </div>
+</div>

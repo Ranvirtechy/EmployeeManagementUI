@@ -1,0 +1,5 @@
+<mat-form-field>
+  <mat-label>{{lblPhone}}</mat-label>
+  <input matInput appNumericOnly [placeholder]="placeHolderPhone" [maxlength]="maxLen"
+         [(ngModel)]="PhoneNumber" (blur)="valueChanged()" [disabled]="disable" autocomplete="off">
+</mat-form-field>

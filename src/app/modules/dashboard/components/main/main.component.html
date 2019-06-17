@@ -1,0 +1,64 @@
+<h4 class="tfr-page-title"><i class="fa fa-home"></i> Dashboard</h4>
+
+<div class="container-fluid">
+
+
+
+  <div class="row">
+    <div class="col-lg-4 col-xs-6">
+      <!-- small box -->
+      <div class="small-box bg-light-blue" style="background-color: #4297DA !important">
+        <div class="icon">
+          <i class="fa fa-coffee"></i>
+        </div>
+        <div class="inner">
+          <h3 [innerHtml]="dashboardData.CurrentlyClosedRestaurants"></h3>
+          <p>Currently Closed Restaurants</p>
+        </div>
+        <a href="#" class="small-box-footer" (click)="showRestaurents()">View More <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-xs-6">
+      <!-- small box -->
+      <div class="small-box bg-aqua" style=" background-color: #42C4D1 !important">
+        <div class="icon">
+          <i class="fa fa-globe"></i>
+        </div>
+        <div class="inner">
+          <h3 [innerHTML]="dashboardData.TotalOrders"></h3>
+
+          <p>Total Orders</p>
+        </div>
+        <a href="#" class="small-box-footer" (click)="showOrders('Created')">View More  <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-xs-6">
+      <!-- small box -->
+      <div class="small-box bg-purple" style="background-color: #8B4AA8 !important">
+        <div class="icon">
+          <i class="fa fa-group"></i>
+        </div>
+        <div class="inner">
+          <h3 [innerHTML]="dashboardData.CancelledOrders"></h3>
+
+          <p>Cancelled Orders</p>
+        </div>
+        <a href="#" class="small-box-footer" (click)="showOrders('Cancelled')">View More <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
+
+    <div class="table-responsive" *ngIf="showClosedRestaurants">
+      <table id="tblRestaurants" class="display datatable-custom table table-striped table-responsive remove-scroll"
+             cellspacing="0" width="100%"></table>
+    </div>
+  </div>
+
+  <!--<div class="table-responsive" *ngIf="showTotalOrders">-->
+    <div class="table-responsive">
+      <table id="tblRegistration" class="display datatable-custom table table-striped table-responsive"
+             cellspacing="0" width="100%"></table>
+    </div>
+  </div>

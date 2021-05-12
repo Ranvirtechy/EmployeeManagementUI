@@ -28,7 +28,7 @@
     "angular-material-fileupload": "^2.0.0",
     "angular5-time-picker": "^1.0.8",
     "bootstrap": "^4.2.1",
-    "chart.js": "^2.7.3",
+    "chart.js": "^2.9.4",
     "core-js": "^2.5.4",
     "datatables.net": "^1.10.19",
     "datatables.net-dt": "^1.10.19",
